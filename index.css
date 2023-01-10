@@ -1,0 +1,342 @@
+:root{
+    --clr-neutral-900: hsl(0, 0%, 8%);
+    --clr-neutral-400:hsl(0, 0%, 41%);
+    --clr-neutral-100:hsl(0, 0%, 98%);
+
+    --ff-primary:'Epilogue', sans-serif;
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fw-regular:700;
+    --fw-bold:500;
+}
+body{
+  font-size: 3vmin;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family:var(--ff-body);
+  line-height: 2.5rem;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  display: block;
+  height: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  margin: 2rem;
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    cursor: pointer;
+    color: var(--clr-neutral-400);
+}
+header{
+  height: 10%;
+}
+main{
+  height: 90%;
+}
+
+
+.logo{
+  margin: 1rem;
+  width: 10%;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:80%;
+}
+nav{
+    width:70%;
+}
+nav ul{
+  padding: 1rem;
+}
+p{
+  padding:2rem 2rem 0 0;
+  color: var(--clr-neutral-400);
+}
+h1{
+  font-weight: bolder;
+  font-size: 6vw;
+}
+span{
+  display: block;
+  margin-bottom: 3rem;
+}
+.login-buttons{
+    display: flex;
+    gap:2rem;
+}
+.container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.h{
+  margin: auto;
+}
+
+.text{
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+button{
+  background-color: var(--clr-neutral-100);
+  border: none;
+  cursor: pointer;
+}
+
+.button{
+  border: solid var(--clr-neutral-900);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-left: 2rem;
+}
+.learn{
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+.learn:hover{
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
+}
+.main-content{
+    width:100%;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-around; 
+    height: 90%;
+}
+
+.sublist-caption{
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  color:var(--clr-neutral-400)
+}
+
+
+.sublist{
+  position:absolute;
+  z-index: 11;
+  margin: 1rem;
+  transform: translateX(-35%) translateY(20%);
+  display: none;
+  border-radius: 12px;
+  background-color: var(--clr-neutral-100);
+ 
+}
+.sublist ul{
+  display: flex;
+  gap: 0.2rem;
+  border-radius: 12px;
+  flex-direction: column;
+  padding:0.2rem;
+  width:max-content;
+  box-shadow: 10px 10px 200px ;
+  cursor: pointer;
+}
+
+.sublist ul li{
+  display: inline-flex;
+  align-items: baseline;
+  gap:1rem;
+}
+.sublist ul li[data-icon="todo"]::before{
+  content: "";
+  background-image: url("images/icon-todo.svg");
+  width:14px;
+  height: 16px;
+}
+.sublist ul li[data-icon="planning"]::before{
+  content: "";
+  background-image: url("images/icon-planning.svg");
+  width:16px;
+  height: 16px;
+}.sublist ul li[data-icon="remainder"]::before{
+  content: "";
+  background-image: url("images/icon-reminders.svg");
+  width:13px;
+  height: 17px;
+}.sublist ul li[data-icon="calender"]::before{
+  content: "";
+  background-image: url("images/icon-calendar.svg");
+  width:16px;
+  height: 16px;
+}
+
+.arrows{
+  display: inline;
+  width: 10px;
+  height: 6px;
+  margin-top: 1rem;
+}
+
+
+
+.footer{
+  gap:1rem;
+  justify-content: space-around;
+
+}
+.nav-control{
+  display: none;
+}
+.feature-sublist{
+  transform: translateX(-50%) translateY(16%);
+}
+
+@media screen and (max-width:1036px) {
+  .navigation{
+   position: absolute;
+   align-items: flex-start;
+   flex-direction: column;
+   background-color: var(--clr-neutral-100);
+   transform: translateX(25%);
+   inset: 0 3rem  0 0;
+   justify-content: flex-start;
+   padding: 1rem;
+   font-size: 2vmax;
+   max-height: 100%;
+   display: none;
+  }
+
+  .nav-control{
+  position: absolute;
+  z-index: 999;
+  display: block;
+  right: 1rem;
+  background-image: url(images/icon-menu.svg);
+  background-repeat: no-repeat;
+  top: 1rem;
+  color: transparent;
+  }
+h1{
+  text-align: center;
+}
+  .navigation[data-visible="true"]{
+    display: block;
+}
+  .main-content{
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 2rem;
+    
+  }
+  nav ul{
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .sublist{
+    position: static;
+    transform: translateX(-30%) translateY(10%);
+  }
+  .sublist ul{
+    gap: 0rem;
+  }
+  
+  .login-buttons{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+  }
+.button{
+  padding: 0rem;
+}
+  .re{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  .text{
+    max-width: 100%;
+    height: 50%;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  picture{
+    height:50%;
+  }
+  img{
+    width: 100%;
+  }
+  span{
+    display: inline;
+  }
+  p{
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+    font-size: 2vmax;
+    line-height: 1.5rem;
+  }
+  .learn{
+    margin-left: 40%;
+  }
+  p,h1{
+    margin:0;
+    
+  }
+  h1{
+    font-size: 8vw;
+  }
+  .sublist-caption{
+    align-items: flex-start;
+  }
+
+}
